@@ -1,0 +1,27 @@
+.content-card {
+    border: solid 0.5px;
+    padding: 8px;
+    border-radius: 8px;
+    height: 250px;
+    width: fit-content;
+
+    -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
+
+    article {
+        img {
+            height: 200px;
+        }
+
+        p {
+            margin: 0px;
+            font-weight: 700;
+        }
+
+        span {
+            font-size: 12px;
+            font-weight: 200;
+        }
+    }
+}

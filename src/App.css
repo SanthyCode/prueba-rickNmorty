@@ -1,38 +1,117 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .logo {
+    display: flex;
+    justify-content: center;
+    
+    img {
+      width: auto;
+      height: 15vh;
+    }
+    
   }
+  
+  .filters-container {
+    margin: 24px;
+    display: flex;
+    justify-content: space-around;
+    
+    @media (max-width: 450px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      button {
+        height: 46.6px;
+        width: 211.6px;
+        border-radius: 8px;
+        border: solid 1px;
+      }
+    }
+
+    select, input {
+      height: 45px;
+      padding: 8px;
+      border-radius: 8px;
+      width: 210px;
+    }
+    
+    input {
+      padding: 0;
+      border: solid 1px;
+    }
+  }
+  
+  .characters-container {
+    section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+
+  .pagination {
+    display: flex
+    ;
+        justify-content: center;
+        gap: 8px;
+        margin: 16px;
+  }
+  
+  /* Estilos para el botón de filtros en móviles */
+.mobile-filter-button {
+  display: none; /* Oculto por defecto */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Estilos para la ventana flotante de filtros en móviles */
+.mobile-filters-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.mobile-filters {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
+  
+  button {
+    width: 100px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
 }
 
-.App-link {
-  color: #61dafb;
+/* Ocultar filtros en pantallas grandes */
+.desktop-filters {
+  display: flex;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media query para pantallas pequeñas */
+@media (max-width: 450px) {
+  .mobile-filter-button {
+    background-color: #7dd0db;
+    border: solid 0px;
+    display: block; /* Mostrar el botón en móviles */
   }
-  to {
-    transform: rotate(360deg);
+
+  .desktop-filters {
+    display: none; /* Ocultar filtros en móviles */
   }
+}
 }
